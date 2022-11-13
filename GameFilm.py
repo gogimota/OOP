@@ -15,4 +15,7 @@ class GameFilm(Film):
         stream.write(f"Игровой фильм.\n"
                      f"\tНазвание: {self.title}\n"
                      f"\tРежиссер: {self.director}\n")
+
+    def write_game_film_to(self, stream):
+        self.write_to(stream)
         stream.write(f"\tСтрана: {self.country}\n")
