@@ -44,6 +44,7 @@ class DList:
 
             for item in self:
                 item.write_to(file_out)
+                file_out.write(f"\tКоличество гласных: {item.num_vowels()}\n")
 
     def write_game_film_to(self, stream):
         with open(stream, "a", encoding="utf-8") as file_out:
