@@ -28,3 +28,14 @@ class Film:
 
         film.read_from(stream)
         return film
+
+    def num_vowels(self):
+        vowels = set("aeiouауоыиэяюёеAEIOUАУОЫИЭЯЮЁЕ")
+        amount = 0
+        for letter in self.title:
+            if letter in vowels:
+                amount += 1
+        return amount
+
+    def match(self, other):
+        return self.num_vowels() < other.num_vowels()

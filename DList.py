@@ -44,6 +44,7 @@ class DList:
 
             for item in self:
                 item.write_to(file_out)
+                file_out.write(f"\tКоличество гласных: {item.num_vowels()}\n")
 
     def __iter__(self):
         self.__cur_item = self.head
@@ -59,3 +60,12 @@ class DList:
 
         else:
             raise StopIteration
+
+    def sort(self):
+        for i in range(self.size):
+            curr_node = self.head
+            while curr_node.next != self.head:
+                next_node = curr_node.next
+                if curr_node.data.match(next_node.data):
+                    curr_node.data, next_node.data = next_node.data, curr_node.data
+                curr_node = next_node
