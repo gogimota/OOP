@@ -28,11 +28,12 @@ class Cartoon(Film):
             case _:
                 stream.close()
                 raise Exception("Error type!")
+        self.country = stream.readline().rstrip("\n")
 
     def write_to(self, stream):
         stream.write(f"Мультфильм.\n"
                      f"\tНазвание: {self.title}\n"
-                     f"\tСпособ создания ")
+                     f"\tСпособ создания: ")
         k = self.way_to_create
 
         match k:
@@ -44,3 +45,4 @@ class Cartoon(Film):
                 stream.write(f"Пластилиновый\n")
             case _:
                 return 0
+        stream.write(f"\tСтрана: {self.country}\n")

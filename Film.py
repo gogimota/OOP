@@ -1,11 +1,15 @@
 class Film:
     def __init__(self):
         self.title = ""
+        self.country = ""
 
     def read_from(self, stream):
         pass
 
     def write_to(self, stream):
+        pass
+
+    def write_game_film_to(self, stream):
         pass
 
     @staticmethod
@@ -21,6 +25,10 @@ class Film:
             case 2:
                 from Cartoon import Cartoon
                 film = Cartoon()
+
+            case 3:
+                from Documentary import Documentary
+                film = Documentary()
 
             case _:
                 stream.close()
